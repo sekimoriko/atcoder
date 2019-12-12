@@ -32,13 +32,13 @@ func scanNums(len int) (nums []int) {
 	return
 }
 
-func scanNumArrays(len_n int, len_m int) (arrays [][]int) {
-	arrays = make([][]int, len_n)
-	for i := 0; i < len_n; i++ {
-		arrays[i] = make([]int, len_m)
+func scanNumArrays(lenN int, lenM int) (arrays [][]int) {
+	arrays = make([][]int, lenN)
+	for i := 0; i < lenN; i++ {
+		arrays[i] = make([]int, lenM)
 	}
-	for i := 0; i < len_n; i++ {
-		for j := 0; j < len_m; j++ {
+	for i := 0; i < lenN; i++ {
+		for j := 0; j < lenM; j++ {
 			arrays[i][j] = nextInt()
 		}
 	}
@@ -46,10 +46,9 @@ func scanNumArrays(len_n int, len_m int) (arrays [][]int) {
 }
 
 func scanStrings(len int) (strings []string) {
-	var str string
 	for i := 0; i < len; i++ {
-		fmt.Scanf("%s", &str)
-		strings = append(strings, str)
+		sc.Scan()
+		strings = append(strings, sc.Text())
 	}
 	return
 }
@@ -57,13 +56,5 @@ func scanStrings(len int) (strings []string) {
 func main() {
 	sc.Split(bufio.ScanWords)
 	n := nextInt()
-	m := nextInt()
-	d := scanNumArrays(n, m)
-	fmt.Println(d)
-	// n := nextInt()
-	//
-	// graph := make([][]string, n)
-	// for i := 0; i < n; i++ {
-	// 	graph[i] = make([]string, m)
-	// }
+	fmt.Println(n)
 }
